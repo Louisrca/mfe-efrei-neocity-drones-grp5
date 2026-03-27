@@ -100,6 +100,46 @@
   opacity: 1;
 }
 
+.drone.scatter {
+  --drone-color: #93d91a;
+}
+.drone.scatter:nth-child(2),
+.drone.scatter:nth-child(7),
+.drone.scatter:nth-child(9),
+.drone.scatter:nth-child(10),
+.drone.scatter:nth-child(15),
+.drone.scatter:nth-child(16),
+.drone.scatter:nth-child(20),
+.drone.scatter:nth-child(21),
+.drone.scatter:nth-child(28),
+.drone.scatter:nth-child(29),
+.drone.scatter:nth-child(33),
+.drone.scatter:nth-child(34),
+.drone.scatter:nth-child(39),
+.drone.scatter:nth-child(40),
+.drone.scatter:nth-child(42),
+.drone.scatter:nth-child(47) {
+  opacity: 1;
+}
+
+.drone.flash {
+  --drone-color: #e0c91b;
+}
+
+/* .drone.flash:nth-child(5),
+.drone.flash:nth-child(6), */
+.drone.flash:nth-child(13),
+.drone.flash:nth-child(14),
+.drone.flash:nth-child(21),
+.drone.flash:nth-child(22),
+.drone.flash:nth-child(28),
+.drone.flash:nth-child(29),
+.drone.flash:nth-child(36),
+.drone.flash:nth-child(37),
+.drone.flash:nth-child(44) {
+  opacity: 1;
+}
+
 .drone.chaos {
   --drone-color: #ff2d2d;
   opacity: 1;
