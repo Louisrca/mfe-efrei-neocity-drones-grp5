@@ -4,9 +4,11 @@ import eventBus from 'shared/eventBus';
 
 const commandMap = {
   storm: 'chaos',
+  acid: 'scatter',
   drones: 'skull',
   riot: 'X',
   love: 'heart',
+  flash: 'flash',
   blackout: 'off',
   off: 'off',
   reset: 'grid',
@@ -37,10 +39,22 @@ export default function DroneSwarm() {
       changeFormation('grid');
     });
 
+    const unsubWeather = eventBus.on('weather:change', (payload = {}) => {
+      if (payload.condition === 'acid') {
+        changeFormation('scatter');
+      } else if (payload.condition === 'storm') {
+        changeFormation('chaos');
+      } else if (payload.condition === 'clear' || payload.condition === 'rainbow') {
+        changeFormation('grid');
+      }
+    });
+
+
     return () => {
       unsubCommand?.();
       unsubOutage?.();
       unsubRestore?.();
+      unsubWeather?.();
     };
   }, []);
 
@@ -58,7 +72,7 @@ export default function DroneSwarm() {
       </div>
 
       <div className="formation-buttons">
-        {['grid', 'skull', 'heart', 'X', 'chaos', 'off'].map((item) => (
+        {['grid', 'skull', 'heart', 'X', 'chaos', 'off', 'scatter', 'flash'].map((item) => (
           <button
             key={item}
             className={`formation-btn ${formation === item ? 'active' : ''}`}
