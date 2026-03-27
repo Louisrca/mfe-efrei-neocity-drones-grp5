@@ -8,6 +8,7 @@ const commandMap = {
   drones: 'skull',
   riot: 'X',
   love: 'heart',
+  flash: 'flash',
   blackout: 'off',
   off: 'off',
   reset: 'grid',
@@ -71,7 +72,7 @@ export default function DroneSwarm() {
       </div>
 
       <div className="formation-buttons">
-        {['grid', 'skull', 'heart', 'X', 'chaos', 'off', 'scatter'].map((item) => (
+        {['grid', 'skull', 'heart', 'X', 'chaos', 'off', 'scatter', 'flash'].map((item) => (
           <button
             key={item}
             className={`formation-btn ${formation === item ? 'active' : ''}`}
