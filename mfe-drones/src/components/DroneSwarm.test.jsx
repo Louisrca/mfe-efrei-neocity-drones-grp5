@@ -113,6 +113,6 @@ describe("DroneSwarm Component", () => {
     const { unmount } = render(<DroneSwarm />);
     unmount();
 
-    expect(unsub).toHaveBeenCalledTimes(3);
+    expect(unsub).toHaveBeenCalledTimes(4);
   });
 });
